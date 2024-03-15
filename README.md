@@ -1,11 +1,12 @@
 # flutter-2024-CinemaMate
 ## Group Members
 
-1. [Yohannes Solomon - UGR/3323/13](http://github.com/Johna210)
-2. [Dawit Belay - UGR/8622/14](http://github.com/da-wit)
-3. [Fozia Mohammed - UGR/4535/14](http://github.com/Iman-301)
-4. [Iman Ibrahim - UGR/1004/14](http://github.com/foziamohammed)
-
+| NAME | ID | 
+|----------|----------|
+| Yohannes Solomon   | UGR/3323/13  | 
+| Dawit Belay   | UGR/8622/14   | 
+| Fozia Mohammed | UGR/4535/14 |
+| Iman Ibrahim | UGR/1004/14 |
 This document provides an overview of the CinemaMate Mobile application, a mobile platform where users can discover and connect with cinemas, and cinemas can manage their movie listings and engage with moviegoers.
 
 ## Features:
