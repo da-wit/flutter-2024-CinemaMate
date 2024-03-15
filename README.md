@@ -7,6 +7,8 @@
 | Dawit Belay   | UGR/8622/14   | 
 | Fozia Mohammed | UGR/4535/14 |
 | Iman Ibrahim | UGR/1004/14 |
+
+
 This document provides an overview of the CinemaMate Mobile application, a mobile platform where users can discover and connect with cinemas, and cinemas can manage their movie listings and engage with moviegoers.
 
 ## Features:
