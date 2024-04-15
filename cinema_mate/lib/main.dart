@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:cinema_mate/presentation/widgets/app_color.dart';
+import 'package:cinema_mate/presentation/widgets/list_items.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
+
+final newColor = AppColor();
 
 void main() {
   runApp(
@@ -9,14 +13,33 @@ void main() {
         appBar: AppBar(
           title: const Text('Hello World'),
         ),
-        body: Center(
-          child: AppButton(
-            title: 'Hello',
-            width: 170,
-            onPressed: () {},
-            leftIcon: const Icon(Icons.access_alarm_outlined),
-            rightIcon: const Icon(Icons.safety_check_rounded),
-          ),
+        backgroundColor: newColor.bg,
+        body: const Column(
+          children: [
+            ListItem(
+              date: '4/15/2024',
+              title: "New Movie",
+              subtitle: 'New cinema',
+              time: '11:25 AM',
+              imagePath: 'assets/images/porsche.jpg',
+            ),
+            SizedBox(height: 30),
+            ListItem(
+              date: '4/15/2024',
+              title: "New Movie",
+              subtitle: 'New cinema',
+              time: '11:25 AM',
+              imagePath: 'assets/images/porsche.jpg',
+            ),
+            SizedBox(height: 30),
+            ListItem(
+              date: '4/15/2024',
+              title: "New Movie",
+              subtitle: 'New cinema',
+              time: '11:25 AM',
+              imagePath: 'assets/images/porsche.jpg',
+            ),
+          ],
         ),
       ),
     ),
