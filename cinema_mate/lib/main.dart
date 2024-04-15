@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:cinema_mate/presentation/widgets/components.dart';
+import 'package:cinema_mate/presentation/widgets/buttons.dart';
 
 void main() {
   runApp(
@@ -12,8 +12,10 @@ void main() {
         body: Center(
           child: AppButton(
             title: 'Hello',
-            width: 50,
+            width: 170,
             onPressed: () {},
+            leftIcon: const Icon(Icons.access_alarm_outlined),
+            rightIcon: const Icon(Icons.safety_check_rounded),
           ),
         ),
       ),
