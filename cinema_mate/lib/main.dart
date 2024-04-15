@@ -1,3 +1,4 @@
+import 'package:cinema_mate/presentation/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
@@ -15,31 +16,11 @@ void main() {
         ),
         backgroundColor: newColor.bg,
         body: const Column(
-          children: [
-            ListItem(
-              date: '4/15/2024',
-              title: "New Movie",
-              subtitle: 'New cinema',
-              time: '11:25 AM',
-              imagePath: 'assets/images/porsche.jpg',
-            ),
-            SizedBox(height: 30),
-            ListItem(
-              date: '4/15/2024',
-              title: "New Movie",
-              subtitle: 'New cinema',
-              time: '11:25 AM',
-              imagePath: 'assets/images/porsche.jpg',
-            ),
-            SizedBox(height: 30),
-            ListItem(
-              date: '4/15/2024',
-              title: "New Movie",
-              subtitle: 'New cinema',
-              time: '11:25 AM',
-              imagePath: 'assets/images/porsche.jpg',
-            ),
-          ],
+          children: [],
+        ),
+        bottomNavigationBar: UserBottomNavBar(
+          selectedIndex: 0,
+          onItemSelected: (ma) {},
         ),
       ),
     ),
