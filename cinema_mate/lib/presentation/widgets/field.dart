@@ -1,4 +1,7 @@
+import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:flutter/material.dart';
+
+var newColor = AppColor();
 
 class Field extends StatelessWidget {
   const Field(
@@ -11,10 +14,8 @@ class Field extends StatelessWidget {
       this.width = 350,
       this.length = 20,
       this.numberOfLines = 1,
-      this.labelColor = Colors.white,
       this.textColor = Colors.white});
 
-  final Color? labelColor;
   final Color? textColor;
   final IconData? icons;
   final String title;
@@ -39,23 +40,23 @@ class Field extends StatelessWidget {
             BoxConstraints(maxWidth: width, maxHeight: height, minHeight: 100),
         labelText: title,
         labelStyle: TextStyle(
-          color: labelColor,
+          color: newColor.grey,
         ),
         prefixIcon: Icon(
           icons,
-          color: labelColor,
+          color: newColor.grey,
         ),
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
+        border: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(
             Radius.elliptical(10, 10),
           ),
-          borderSide: BorderSide(width: 2, color: Colors.white),
+          borderSide: BorderSide(width: 2, color: textColor!),
         ),
-        focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(
+        focusedBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
               Radius.elliptical(10, 10),
             ),
-            borderSide: BorderSide(width: 2, color: Colors.white)),
+            borderSide: BorderSide(width: 2, color: textColor!)),
       ),
     );
   }
