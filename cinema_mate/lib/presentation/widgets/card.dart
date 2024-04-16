@@ -1,5 +1,8 @@
+import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+var bg = AppColor();
 
 class AppCard extends StatelessWidget {
   const AppCard({
@@ -31,15 +34,16 @@ class AppCard extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 40,
+              height: 50,
               margin: const EdgeInsets.all(5),
-              decoration: const BoxDecoration(
-                  color: Color.fromARGB(139, 0, 0, 0),
-                  borderRadius: BorderRadius.all(Radius.elliptical(10, 10))),
+              decoration: BoxDecoration(
+                  color: bg.opblack,
+                  borderRadius:
+                      const BorderRadius.all(Radius.elliptical(10, 10))),
               child: Center(
                 child: Text(
                   title,
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(color: bg.grey, fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
               ),

@@ -8,4 +8,5 @@ class AppColor {
   Color error = const Color.fromARGB(255, 255, 0, 0);
   Color genre = const Color.fromARGB(255, 217, 217, 217);
   Color grey = const Color.fromARGB(255, 174, 174, 174);
+  Color opblack = const Color.fromARGB(139, 0, 0, 0);
 }
