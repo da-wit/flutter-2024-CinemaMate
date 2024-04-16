@@ -39,6 +39,7 @@ class _UserTabBarState extends State<UserTabBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         title: Text(
           'CinemaMate',
