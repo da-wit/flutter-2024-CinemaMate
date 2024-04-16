@@ -5,7 +5,7 @@ import './app_color.dart';
 var newColor = AppColor();
 
 class AppButton extends StatelessWidget {
-  AppButton({
+  const AppButton({
     super.key,
     required this.title,
     required this.width,
@@ -18,7 +18,7 @@ class AppButton extends StatelessWidget {
   final String title;
   final Icon? leftIcon;
   final Icon? rightIcon;
-  void Function() onPressed;
+  final void Function() onPressed;
   final double height;
   final double width;
 

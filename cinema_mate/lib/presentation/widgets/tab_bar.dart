@@ -63,11 +63,14 @@ class CinemaBottomNavBar extends StatelessWidget {
 }
 
 class UserBottomNavBar extends StatelessWidget {
-  const UserBottomNavBar(
-      {super.key, required this.selectedIndex, required this.onItemSelected});
+  const UserBottomNavBar({
+    super.key,
+    required this.selectedIndex,
+    required this.onTap,
+  });
 
   final int selectedIndex;
-  final Function(int) onItemSelected;
+  final Function(int) onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +109,7 @@ class UserBottomNavBar extends StatelessWidget {
                 label: 'Profile'),
           ],
           currentIndex: selectedIndex,
-          onTap: onItemSelected,
+          onTap: onTap,
           backgroundColor: newColor.primary,
           selectedItemColor: newColor.white,
         ),

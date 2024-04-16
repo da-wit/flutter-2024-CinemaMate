@@ -1,4 +1,3 @@
-import 'package:cinema_mate/main.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
@@ -22,7 +21,7 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 65,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
