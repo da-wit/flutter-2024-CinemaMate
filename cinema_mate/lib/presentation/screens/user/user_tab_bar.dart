@@ -1,6 +1,8 @@
-import 'package:cinema_mate/presentation/screens/user/user_homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import 'package:cinema_mate/presentation/screens/user/user_homepage.dart';
+import 'package:cinema_mate/presentation/screens/user/user_profile.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/tab_bar.dart';
 
@@ -28,7 +30,9 @@ class _UserTabBarState extends State<UserTabBar> {
     setState(() {
       if (index == 0) {
         _selectedScreen = const UserHomepage();
-      } else if (index == 2) {}
+      } else if (index == 2) {
+        _selectedScreen = const UserProfile();
+      }
     });
   }
 
@@ -38,7 +42,7 @@ class _UserTabBarState extends State<UserTabBar> {
       appBar: AppBar(
         title: Text(
           'CinemaMate',
-          style: TextStyle(
+          style: GoogleFonts.josefinSans(
             color: newColor.white,
             fontWeight: FontWeight.bold,
             fontSize: 30,
