@@ -13,6 +13,7 @@ class AppButton extends StatelessWidget {
     this.height = 50,
     this.leftIcon,
     this.rightIcon,
+    this.textSize,
   });
 
   final String title;
@@ -21,11 +22,13 @@ class AppButton extends StatelessWidget {
   final void Function() onPressed;
   final double height;
   final double width;
+  final double? textSize;
 
   @override
   Widget build(BuildContext context) {
     bool isLeft = false;
     bool isRight = false;
+    double sizeText = 17;
 
     if (leftIcon != null) {
       isLeft = true;
@@ -33,6 +36,10 @@ class AppButton extends StatelessWidget {
 
     if (rightIcon != null) {
       isRight = true;
+    }
+
+    if (textSize != null) {
+      sizeText = textSize!;
     }
 
     return SizedBox(
@@ -56,7 +63,7 @@ class AppButton extends StatelessWidget {
             const SizedBox(width: 10),
             Text(
               title,
-              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: sizeText, fontWeight: FontWeight.bold),
             ),
             const SizedBox(width: 10),
             isRight ? rightIcon! : Container(),
