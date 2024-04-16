@@ -1,3 +1,4 @@
+import 'package:cinema_mate/presentation/screens/user/user_homepage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
@@ -14,14 +15,22 @@ class UserTabBar extends StatefulWidget {
 
 class _UserTabBarState extends State<UserTabBar> {
   int _selectedPageIndex = 0;
+  Widget _selectedScreen = Container();
 
   void _selectPage(index) {
     setState(() {
       _selectedPageIndex = index;
     });
+    _changeScreen(index);
   }
 
-  void _changeScreen(index) {}
+  void _changeScreen(index) {
+    setState(() {
+      if (index == 0) {
+        _selectedScreen = const UserHomepage();
+      } else if (index == 2) {}
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +48,7 @@ class _UserTabBarState extends State<UserTabBar> {
         backgroundColor: newColor.bg,
       ),
       backgroundColor: newColor.bg,
-      body: Container(),
+      body: _selectedScreen,
       bottomNavigationBar: UserBottomNavBar(
         selectedIndex: _selectedPageIndex,
         onTap: (index) {
