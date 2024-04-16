@@ -35,13 +35,24 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 50),
-                Field(title: 'Previous $toChange'),
-                Field(title: 'New $toChange'),
+                Field(
+                  title: 'Previous $toChange',
+                  textColor: newColor.bg,
+                  labelColor: newColor.bg,
+                ),
+                Field(
+                  title: 'New $toChange',
+                  textColor: newColor.bg,
+                  labelColor: newColor.bg,
+                ),
                 const SizedBox(height: 50),
                 AppButton(
                   title: 'Continue',
                   width: 200,
                   onPressed: onpressed,
+                ),
+                const SizedBox(
+                  height: 40,
                 )
               ],
             ),
