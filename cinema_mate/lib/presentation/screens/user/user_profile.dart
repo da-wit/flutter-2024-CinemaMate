@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
+import 'package:cinema_mate/presentation/widgets/field.dart';
 
 final newColor = AppColor();
 
@@ -30,7 +31,42 @@ class UserProfile extends StatelessWidget {
           AppButton(
             title: 'Change Email',
             width: 300,
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                constraints: const BoxConstraints(minHeight: 700),
+                builder: (context) {
+                  return SingleChildScrollView(
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(20),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            const Text(
+                              'Change Email',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
+                            ),
+                            const SizedBox(height: 50),
+                            const Field(title: 'Previous Email'),
+                            const Field(title: 'New Email'),
+                            const SizedBox(height: 50),
+                            AppButton(
+                              title: 'Continue',
+                              width: 200,
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
             height: 60,
             textSize: 20,
           ),
