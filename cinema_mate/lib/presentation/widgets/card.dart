@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class AppCard extends StatelessWidget {
-  const AppCard(
-      {super.key,
-      required this.title,
-      required this.imgpath,
-      this.height = 300,
-      this.top = 120});
+  const AppCard({
+    super.key,
+    required this.title,
+    required this.imgpath,
+    this.height = 300,
+  });
   final String title;
   final String imgpath;
   final double? height;
-  final double? top;
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +21,18 @@ class AppCard extends StatelessWidget {
       child: Stack(
         children: [
           SizedBox(
-            // width: width,
             height: height,
-            // height: double.infinity,
             child: FadeInImage(
               placeholder: MemoryImage(kTransparentImage),
               image: AssetImage(imgpath),
               fit: BoxFit.fitHeight,
             ),
           ),
-          Positioned(
-            left: 10,
-            right: 10,
-            top: top,
-            bottom: 5,
+          Align(
+            alignment: Alignment.bottomCenter,
             child: Container(
+              height: 40,
+              margin: const EdgeInsets.all(5),
               decoration: const BoxDecoration(
                   color: Color.fromARGB(139, 0, 0, 0),
                   borderRadius: BorderRadius.all(Radius.elliptical(10, 10))),
