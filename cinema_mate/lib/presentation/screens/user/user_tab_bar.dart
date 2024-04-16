@@ -1,5 +1,8 @@
+import 'package:cinema_mate/presentation/screens/user/user_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import 'package:cinema_mate/presentation/screens/user/user_homepage.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/tab_bar.dart';
 
@@ -14,14 +17,28 @@ class UserTabBar extends StatefulWidget {
 
 class _UserTabBarState extends State<UserTabBar> {
   int _selectedPageIndex = 0;
+  Widget _currentScreen = const UserHomepage();
 
   void _selectPage(index) {
     setState(() {
       _selectedPageIndex = index;
     });
+    _changeScreen(index);
   }
 
-  void _changeScreen(index) {}
+  void _changeScreen(index) {
+    setState(
+      () {
+        if (index == 0) {
+          _currentScreen = const UserHomepage();
+        } else if (index == 1) {
+          _currentScreen = Container();
+        } else if (index == 2) {
+          _currentScreen = const UserProfile();
+        }
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +46,7 @@ class _UserTabBarState extends State<UserTabBar> {
       appBar: AppBar(
         title: Text(
           'CinemaMate',
-          style: TextStyle(
+          style: GoogleFonts.josefinSans(
             color: newColor.white,
             fontWeight: FontWeight.bold,
             fontSize: 30,
@@ -39,7 +56,7 @@ class _UserTabBarState extends State<UserTabBar> {
         backgroundColor: newColor.bg,
       ),
       backgroundColor: newColor.bg,
-      body: Container(),
+      body: _currentScreen,
       bottomNavigationBar: UserBottomNavBar(
         selectedIndex: _selectedPageIndex,
         onTap: (index) {
