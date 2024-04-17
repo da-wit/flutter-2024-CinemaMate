@@ -10,7 +10,8 @@ class UserWatchlist extends StatelessWidget {
         itemCount: 20,
         itemBuilder: (context, index) {
           return Container(
-            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(5),
+            margin: const EdgeInsets.only(left: 10, right: 30),
             child: Dismissible(
               key: Key(index.toString()),
               onDismissed: (direction) {
@@ -20,7 +21,10 @@ class UserWatchlist extends StatelessWidget {
               background: Container(
                 color: newColor.error,
                 alignment: Alignment.centerRight,
-                child: const Icon(Icons.delete_forever),
+                child: const Icon(
+                  Icons.highlight_remove,
+                  size: 40,
+                ),
               ),
               child: const ListItem(
                   title: "iron man",
