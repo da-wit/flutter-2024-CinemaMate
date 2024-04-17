@@ -1,3 +1,4 @@
+import 'package:cinema_mate/presentation/screens/user/cinema_movies_list.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,6 +33,10 @@ class CinemaDescriptionScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold)),
           ),
           centerTitle: true,
+          iconTheme: IconThemeData(
+            color: newColor.white,
+            size: 30,
+          ),
         ),
         body: Column(
           children: [
@@ -97,7 +102,15 @@ class CinemaDescriptionScreen extends StatelessWidget {
               title: "Checkout Movies",
               width: 300,
               height: 70,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) {
+                      return const CinemaMovieList();
+                    },
+                  ),
+                );
+              },
               rightIcon: const Icon(
                 Icons.arrow_forward,
                 size: 30,
