@@ -1,18 +1,22 @@
+import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:flutter/material.dart';
 
-class Field extends StatelessWidget {
-  const Field({
-    super.key,
-    this.ishash = false,
-    required this.title,
-    this.icons,
-    this.keyboard = TextInputType.text,
-    this.height = 100,
-    this.width = 350,
-    this.length = 20,
-    this.numberOfLines = 1,
-  });
+var newColor = AppColor();
 
+class Field extends StatelessWidget {
+  const Field(
+      {super.key,
+      this.ishash = false,
+      required this.title,
+      this.icons,
+      this.keyboard = TextInputType.text,
+      this.height = 100,
+      this.width = 350,
+      this.length = 20,
+      this.numberOfLines = 1,
+      this.textColor = Colors.white});
+
+  final Color? textColor;
   final IconData? icons;
   final String title;
   final bool ishash;
@@ -30,29 +34,29 @@ class Field extends StatelessWidget {
       keyboardType: TextInputType.text,
       obscuringCharacter: "*",
       obscureText: ishash,
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: textColor),
       decoration: InputDecoration(
         constraints:
             BoxConstraints(maxWidth: width, maxHeight: height, minHeight: 100),
         labelText: title,
-        labelStyle: const TextStyle(
-          color: Colors.white,
+        labelStyle: TextStyle(
+          color: newColor.grey,
         ),
         prefixIcon: Icon(
           icons,
-          color: Colors.white,
+          color: newColor.grey,
         ),
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
+        border: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(
             Radius.elliptical(10, 10),
           ),
-          borderSide: BorderSide(width: 2, color: Colors.white),
+          borderSide: BorderSide(width: 2, color: textColor!),
         ),
-        focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(
+        focusedBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
               Radius.elliptical(10, 10),
             ),
-            borderSide: BorderSide(width: 2, color: Colors.white)),
+            borderSide: BorderSide(width: 2, color: textColor!)),
       ),
     );
   }
