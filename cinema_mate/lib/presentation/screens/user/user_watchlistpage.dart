@@ -7,7 +7,7 @@ class UserWatchlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 5,
+        itemCount: 20,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.all(20),
