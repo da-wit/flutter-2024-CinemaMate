@@ -18,7 +18,7 @@ class UserTabBar extends StatefulWidget {
 
 class _UserTabBarState extends State<UserTabBar> {
   int _selectedPageIndex = 0;
-  Widget _selectedScreen = Container();
+  Widget _selectedScreen = const UserHomepage();
 
   void _selectPage(index) {
     setState(() {

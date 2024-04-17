@@ -18,7 +18,7 @@ class UserWatchlist extends StatelessWidget {
                 return;
               },
               background: Container(
-                color: const Color.fromARGB(179, 255, 21, 4),
+                color: newColor.error,
                 alignment: Alignment.centerRight,
                 child: const Icon(Icons.delete_forever),
               ),
