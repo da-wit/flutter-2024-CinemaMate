@@ -8,8 +8,6 @@ import 'package:cinema_mate/presentation/widgets/buttons.dart';
 import 'package:cinema_mate/presentation/widgets/genre.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cinema_mate/presentation/screens/user/user_profile.dart';
-import 'package:flutter/widgets.dart';
 
 var appColor = AppColor();
 
