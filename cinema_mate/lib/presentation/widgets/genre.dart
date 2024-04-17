@@ -10,7 +10,7 @@ class Genre extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 250,
+      width: 75,
       height: 50,
       margin: const EdgeInsets.all(5),
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
