@@ -1,3 +1,4 @@
+import 'package:cinema_mate/presentation/screens/user/user_watchlistpage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,6 +31,8 @@ class _UserTabBarState extends State<UserTabBar> {
     setState(() {
       if (index == 0) {
         _selectedScreen = const UserHomepage();
+      } else if (index == 1) {
+        _selectedScreen = const UserWatchlist();
       } else if (index == 2) {
         _selectedScreen = const UserProfile();
       }
