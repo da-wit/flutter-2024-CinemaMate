@@ -1,6 +1,9 @@
+import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
 import 'package:cinema_mate/presentation/widgets/register.dart';
 import 'package:flutter/material.dart';
+
+var newColor = AppColor();
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -39,11 +42,12 @@ class _RegistrationState extends State<Registration> {
     return Scaffold(
       body: Container(
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.black,
-              Colors.red,
+              newColor.bg,
+              newColor.bg,
+              newColor.gradiantColor,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
