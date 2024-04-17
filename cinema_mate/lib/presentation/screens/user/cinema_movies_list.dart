@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:cinema_mate/presentation/screens/user/user_profile.dart';
+import 'package:cinema_mate/presentation/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -43,6 +44,12 @@ class _CinemaMovieListState extends State<CinemaMovieList> {
                     color: Colors.transparent, // Transparent color
                   ),
                 ),
+                // const Center(
+                //   child: AppCard(
+                //     title: 'Movie',
+                //     imgpath: 'assets/images/porsche.jpg',
+                //   ),
+                // ),
               ],
             )
           ],
