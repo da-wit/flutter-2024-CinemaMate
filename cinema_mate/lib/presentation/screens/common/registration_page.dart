@@ -1,3 +1,4 @@
+import 'package:cinema_mate/presentation/screens/common/sign_in.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
 import 'package:cinema_mate/presentation/widgets/register.dart';
@@ -15,23 +16,22 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-  var formNumber = 1;
-  // var pass = 1;
+  String formNumber = 'User';
 
   Widget _selected = const UserRegistration();
+  Color userButtonColor = newColor.primary;
+  Color cinemaButtonColor = newColor.grey;
 
-  void ChangeForm(i) {
+  void changeForm(role) {
     setState(
       () {
-        if (i == 1) {
+        if (role == 'User') {
           _selected = const UserRegistration();
-          formNumber = i;
-          // pass = 1;
+          formNumber = 'User';
         }
-        if (i == 2) {
+        if (role == 'Cinema') {
           _selected = const CinemaRegistration();
-          formNumber = i;
-          // pass = 2;
+          formNumber = 'Cinema';
         }
       },
     );
@@ -62,22 +62,30 @@ class _RegistrationState extends State<Registration> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     AppButton(
-                        title: "User",
-                        width: 180,
-                        onPressed: () {
-                          ChangeForm(1);
-                        }),
+                      title: "User",
+                      width: 180,
+                      onPressed: () {
+                        changeForm('User');
+                        userButtonColor = newColor.primary;
+                        cinemaButtonColor = newColor.grey;
+                      },
+                      buttonColor: userButtonColor,
+                    ),
                     AppButton(
-                        title: "Cinema name",
-                        width: 180,
-                        onPressed: () {
-                          ChangeForm(2);
-                        })
+                      title: "Cinema name",
+                      width: 180,
+                      onPressed: () {
+                        changeForm('Cinema');
+                        userButtonColor = newColor.grey;
+                        cinemaButtonColor = newColor.primary;
+                      },
+                      buttonColor: cinemaButtonColor,
+                    )
                   ],
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               _selected,
               AppButton(
@@ -85,6 +93,13 @@ class _RegistrationState extends State<Registration> {
                 width: 250,
                 onPressed: () {
                   //use the formnumber to pass values to the login page
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) {
+                        return SignIn(role: formNumber);
+                      },
+                    ),
+                  );
                 },
                 textSize: 30,
                 height: 70,

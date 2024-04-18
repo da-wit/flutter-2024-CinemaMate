@@ -37,6 +37,7 @@ dependencies:
     transparent_image: ^2.0.1
     google_fonts: ^6.2.1
     carousel_slider: ^4.2.1
+    numberpicker: ^2.1.2
 
 dev_dependencies:
     flutter_test:

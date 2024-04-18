@@ -1,6 +1,7 @@
-import 'package:cinema_mate/presentation/widgets/buttons.dart';
-import 'package:cinema_mate/presentation/widgets/field.dart';
 import 'package:flutter/material.dart';
+
+import 'package:cinema_mate/presentation/widgets/field.dart';
+import 'package:cinema_mate/presentation/widgets/buttons.dart';
 
 class UserRegistration extends StatelessWidget {
   const UserRegistration({super.key});

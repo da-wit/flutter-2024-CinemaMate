@@ -7,8 +7,8 @@ import 'package:cinema_mate/presentation/widgets/app_color.dart';
 
 var appColor = AppColor();
 
-class UserSignIn extends StatelessWidget {
-  const UserSignIn({super.key, required this.role});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key, required this.role});
 
   final String role;
 

@@ -14,6 +14,7 @@ class AppButton extends StatelessWidget {
     this.leftIcon,
     this.rightIcon,
     this.textSize,
+    this.buttonColor = const Color.fromARGB(255, 255, 67, 67),
   });
 
   final String title;
@@ -23,6 +24,7 @@ class AppButton extends StatelessWidget {
   final double height;
   final double width;
   final double? textSize;
+  final Color? buttonColor;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class AppButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: newColor.primary,
+          backgroundColor: buttonColor,
           foregroundColor: newColor.white,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
