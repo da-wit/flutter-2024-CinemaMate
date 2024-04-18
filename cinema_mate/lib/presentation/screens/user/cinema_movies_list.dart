@@ -55,7 +55,7 @@ class _CinemaMovieListState extends State<CinemaMovieList> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.5,
               child: Stack(
                 children: [
@@ -124,17 +124,36 @@ class _CinemaMovieListState extends State<CinemaMovieList> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    'Movie Title',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: appColor.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'show Time',
-                    style: TextStyle(fontSize: 15, color: appColor.grey),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(width: 20),
+                      Column(
+                        children: [
+                          Text(
+                            'Movie Title',
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: appColor.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            'show Time',
+                            style:
+                                TextStyle(fontSize: 15, color: appColor.grey),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(width: 20),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.favorite_border,
+                          size: 35,
+                        ),
+                      )
+                    ],
                   ),
                   const SizedBox(height: 40),
                   Expanded(
