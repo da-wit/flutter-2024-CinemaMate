@@ -164,12 +164,14 @@ class _CinemaMovieListState extends State<CinemaMovieList> {
                         Genre(genre: 'Action'),
                         Genre(genre: 'Action'),
                         Genre(genre: 'Action'),
+                        Genre(genre: 'Action'),
                       ],
                     ),
                   )
                 ],
               ),
             ),
+            const SizedBox(height: 40),
             AppButton(
               title: 'Book Now',
               width: 300,

@@ -11,11 +11,11 @@ class Genre extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(2),
+      margin: const EdgeInsets.all(2),
       child: Chip(
         label: Text(genre),
         backgroundColor: newColor.opblack,
-        labelStyle: TextStyle(color: newColor.grey),
+        labelStyle: TextStyle(color: newColor.white),
       ),
     );
   }
