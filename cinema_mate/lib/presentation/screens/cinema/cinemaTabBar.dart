@@ -1,6 +1,8 @@
+import 'package:cinema_mate/presentation/screens/cinema/add_mov.dart';
 import 'package:cinema_mate/presentation/screens/cinema/bookSeats.dart';
 import 'package:cinema_mate/presentation/screens/cinema/cinemaProfile.dart';
 import 'package:cinema_mate/presentation/screens/cinema/editMovie.dart';
+import 'package:cinema_mate/presentation/screens/cinema/list_cinema.dart';
 import 'package:flutter/material.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/tab_bar.dart';
@@ -28,9 +30,9 @@ class _CinemaTabBarState extends State<CinemaTabBar> {
   void _changeScreen(index) {
     setState(() {
       if (index == 0) {
-        _selectedScreen = const CinemaProfile();
+        _selectedScreen = const CinemaList();
       } else if (index == 1) {
-        _selectedScreen = const EditMovie();
+        _selectedScreen = const AddMovie();
       } else if (index == 2) {
         _selectedScreen = const BookSeats();
       } else if (index == 3) {

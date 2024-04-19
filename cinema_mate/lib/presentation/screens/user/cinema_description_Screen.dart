@@ -1,4 +1,3 @@
-import 'package:cinema_mate/presentation/screens/user/cinema_movies_list.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
 
@@ -22,103 +21,97 @@ class CinemaDescriptionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: newColor.bg,
+      appBar: AppBar(
         backgroundColor: newColor.bg,
-        appBar: AppBar(
-          backgroundColor: newColor.bg,
-          title: Text(
-            'CinemaMate',
-            style: GoogleFonts.josefinSans(
-                textStyle: TextStyle(
-                    color: newColor.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold)),
-          ),
-          centerTitle: true,
-          iconTheme: IconThemeData(
-            color: newColor.white,
-            size: 30,
-          ),
+        title: Text(
+          'CinemaMate',
+          style: GoogleFonts.josefinSans(
+              textStyle: TextStyle(
+                  color: newColor.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold)),
         ),
-        body: Column(
-          children: [
-            Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Container(
-                  margin: const EdgeInsets.all(30),
-                  child: Image.asset(
-                    imagePath,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                    height: 300,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(35),
-                  height: 40,
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: newColor.white,
+          size: 30,
+        ),
+      ),
+      body: Column(
+        children: [
+          Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              Container(
+                margin: const EdgeInsets.all(30),
+                child: Image.asset(
+                  imagePath,
                   width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: newColor.opblack,
-                      borderRadius:
-                          const BorderRadius.all(Radius.elliptical(10, 10))),
-                  child: Center(
-                    child: Text(
-                      cinemaName,
-                      style: TextStyle(color: newColor.white, fontSize: 25),
-                      textAlign: TextAlign.center,
-                    ),
+                  fit: BoxFit.cover,
+                  height: 300,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(35),
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: newColor.opblack,
+                    borderRadius:
+                        const BorderRadius.all(Radius.elliptical(10, 10))),
+                child: Center(
+                  child: Text(
+                    cinemaName,
+                    style: TextStyle(color: newColor.white, fontSize: 25),
+                    textAlign: TextAlign.center,
                   ),
                 ),
+              ),
+            ],
+          ),
+          Container(
+            height: 250,
+            width: double.infinity,
+            margin: const EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              border: Border(
+                left: BorderSide(width: 1, color: newColor.white),
+                right: BorderSide(width: 1, color: newColor.white),
+                top: BorderSide(width: 1, color: newColor.white),
+                bottom: BorderSide(width: 1, color: newColor.white),
+              ),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  "Description",
+                  style: TextStyle(color: newColor.white, fontSize: 30),
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Text(description,
+                        style: TextStyle(color: newColor.white, fontSize: 20)),
+                  ),
+                )
               ],
             ),
-            Container(
-              height: 250,
-              width: double.infinity,
-              margin: const EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                border: Border(
-                  left: BorderSide(width: 1, color: newColor.white),
-                  right: BorderSide(width: 1, color: newColor.white),
-                  top: BorderSide(width: 1, color: newColor.white),
-                  bottom: BorderSide(width: 1, color: newColor.white),
-                ),
-              ),
-              child: Column(
-                children: [
-                  Text(
-                    "Description",
-                    style: TextStyle(color: newColor.white, fontSize: 30),
-                  ),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Text(description,
-                          style:
-                              TextStyle(color: newColor.white, fontSize: 20)),
-                    ),
-                  )
-                ],
-              ),
+          ),
+          AppButton(
+            title: "Checkout Movies",
+            width: 300,
+            height: 70,
+            onPressed: () {
+              Navigator.pushNamed(context, '/cinemsMoviesList');
+            },
+            rightIcon: const Icon(
+              Icons.arrow_forward,
+              size: 30,
             ),
-            AppButton(
-              title: "Checkout Movies",
-              width: 300,
-              height: 70,
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (ctx) {
-                      return const CinemaMovieList();
-                    },
-                  ),
-                );
-              },
-              rightIcon: const Icon(
-                Icons.arrow_forward,
-                size: 30,
-              ),
-              textSize: 25,
-            )
-          ],
-        ));
+            textSize: 25,
+          )
+        ],
+      ),
+    );
   }
 }

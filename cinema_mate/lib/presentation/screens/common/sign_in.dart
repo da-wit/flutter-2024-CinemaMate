@@ -49,7 +49,13 @@ class SignIn extends StatelessWidget {
                   AppButton(
                     title: 'Sign in',
                     width: 200,
-                    onPressed: () {},
+                    onPressed: () {
+                      if (role == 'User') {
+                        Navigator.pushNamed(context, '/userhome');
+                      } else {
+                        Navigator.pushNamed(context, '/cinema');
+                      }
+                    },
                     textSize: 25,
                   ),
                   const SizedBox(

@@ -1,4 +1,3 @@
-import 'package:cinema_mate/presentation/screens/common/sign_in.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
 import 'package:cinema_mate/presentation/widgets/register.dart';
@@ -16,7 +15,7 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-  String formNumber = 'User';
+  String role = 'User';
 
   Widget _selected = const UserRegistration();
   Color userButtonColor = newColor.primary;
@@ -27,11 +26,11 @@ class _RegistrationState extends State<Registration> {
       () {
         if (role == 'User') {
           _selected = const UserRegistration();
-          formNumber = 'User';
+          role = 'User';
         }
         if (role == 'Cinema') {
           _selected = const CinemaRegistration();
-          formNumber = 'Cinema';
+          role = 'Cinema';
         }
       },
     );
@@ -92,14 +91,7 @@ class _RegistrationState extends State<Registration> {
                 title: "Sign Up",
                 width: 250,
                 onPressed: () {
-                  //use the formnumber to pass values to the login page
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) {
-                        return SignIn(role: formNumber);
-                      },
-                    ),
-                  );
+                  Navigator.pushNamed(context, '/signIn');
                 },
                 textSize: 30,
                 height: 70,

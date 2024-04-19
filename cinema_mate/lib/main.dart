@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+
+import 'package:cinema_mate/presentation/screens/cinema/cinemaTabBar.dart';
 import 'package:cinema_mate/presentation/screens/cinema/add_mov.dart';
 import 'package:cinema_mate/presentation/screens/cinema/bookSeats.dart';
 import 'package:cinema_mate/presentation/screens/cinema/cinemaProfile.dart';
@@ -9,21 +12,19 @@ import 'package:cinema_mate/presentation/screens/common/registration_page.dart';
 import 'package:cinema_mate/presentation/screens/common/sign_in.dart';
 import 'package:cinema_mate/presentation/screens/user/cinema_description_Screen.dart';
 import 'package:cinema_mate/presentation/screens/user/cinema_movies_list.dart';
-import 'package:cinema_mate/presentation/screens/user/user_homepage.dart';
 import 'package:cinema_mate/presentation/screens/user/user_profile.dart';
 import 'package:cinema_mate/presentation/screens/user/user_watchlistpage.dart';
-import 'package:flutter/material.dart';
-
 import 'package:cinema_mate/presentation/screens/user/user_tab_bar.dart';
 
 void main() {
   runApp(
     MaterialApp(
       routes: {
-        '/userhome': (context) => const UserHomepage(),
+        '/userhome': (context) => const UserTabBar(),
         '/cinemahome': (context) => const CinemaList(),
         '/userprofile': (context) => const UserProfile(),
         '/cinemaprofile': (context) => const CinemaProfile(),
+        '/cinema': (context) => const CinemaTabBar(),
         '/user': (context) => const UserTabBar(),
         '/watchlist': (context) => const UserWatchlist(),
         '/cinemsMoviesList': (context) => const CinemaMovieList(),
@@ -39,10 +40,10 @@ void main() {
             title: 'Cinema', imagePath: 'assets/images/img.jpg'),
         '/landing': (context) => const Landing(),
         '/register': (context) => const Registration(),
-        '/signin': (context) => const SignIn(role: 'User'),
+        '/signIn': (context) => const SignIn(role: 'User'),
       },
       home: const Center(
-        child: UserTabBar(),
+        child: Landing(),
       ),
     ),
   );

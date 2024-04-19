@@ -7,8 +7,8 @@ import '../../widgets/field.dart';
 import '../../widgets/app_color.dart';
 import '../../widgets/tab_bar.dart';
 import '../../widgets/buttons.dart';
-import './util.dart';
 import 'dart:typed_data';
+import 'package:google_fonts/google_fonts.dart';
 
 var button = AppButton(title: 'Add', width: 150, onPressed: () {});
 var navBottom = CinemaBottomNavBar(
@@ -50,9 +50,21 @@ class _AddMovieState extends State<AddMovie> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: newColor.bg,
-      child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'CinemaMate',
+          style: GoogleFonts.josefinSans(
+            color: newColor.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: newColor.bg,
+      ),
+      backgroundColor: newColor.bg,
+      body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
@@ -139,12 +151,13 @@ class _AddMovieState extends State<AddMovie> {
                           size: 30, color: Colors.red),
                       onPressed: () {
                         showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                content: ShowTimePicker(onTimeSelected: (c) {}),
-                              );
-                            });
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              content: ShowTimePicker(onTimeSelected: (c) {}),
+                            );
+                          },
+                        );
                       },
                     ),
                   ),

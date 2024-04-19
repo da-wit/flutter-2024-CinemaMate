@@ -51,8 +51,8 @@ class Landing extends StatelessWidget {
               child: Text(
                 'Discover your next \ncinematic obsession',
                 style: GoogleFonts.josefinSans(
-                  textStyle: const TextStyle(
-                    color: Colors.amber,
+                  textStyle: TextStyle(
+                    color: newColor.white,
                     fontSize: 28,
                     decoration: TextDecoration.none,
                   ),
@@ -69,12 +69,16 @@ class Landing extends StatelessWidget {
           left: 0,
           right: 0,
           child: Center(
-              child: AppButton(
-            onPressed: () {},
-            title: 'Explore Now',
-            width: 200,
-            height: 50,
-          )),
+            child: AppButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/register');
+              },
+              title: 'Explore Now',
+              width: 250,
+              height: 70,
+              textSize: 30,
+            ),
+          ),
         ),
       ],
     );

@@ -2,7 +2,8 @@ import 'package:cinema_mate/presentation/screens/cinema/cinema_details.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/app_color.dart';
-import '../../widgets/card.dart'; // Import the Cinema_Detail page
+import '../../widgets/card.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 var newColor = AppColor();
 
@@ -16,9 +17,21 @@ class CinemaList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: newColor.bg,
-      child: Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'CinemaMate',
+          style: GoogleFonts.josefinSans(
+            color: newColor.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: newColor.bg,
+      ),
+      backgroundColor: newColor.bg,
+      body: Container(
         padding: const EdgeInsets.all(10),
         child: GridView(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
