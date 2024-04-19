@@ -1,5 +1,6 @@
 import 'package:cinema_mate/presentation/widgets/genre_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/field.dart';
@@ -79,7 +80,7 @@ class _EditMovieState extends State<EditMovie> {
                   numberOfLines: 1,
                   textColor: Colors.white,
                 ),
-                Container(width: 350, height: 70, child: GenrePicker()),
+                const SizedBox(width: 350, height: 70, child: GenrePicker()),
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
