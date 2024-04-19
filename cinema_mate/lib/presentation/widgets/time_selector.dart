@@ -122,13 +122,14 @@ class _ShowTimePickerState extends State<ShowTimePicker> {
                       decoration: BoxDecoration(
                         color: amColor,
                         border: Border.all(color: appColor.bg),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Text(
                         'AM',
                         style: TextStyle(
                           color: appColor.white,
                           decoration: TextDecoration.none,
-                          fontSize: 25,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -148,23 +149,24 @@ class _ShowTimePickerState extends State<ShowTimePicker> {
                           horizontal: 20, vertical: 10),
                       decoration: BoxDecoration(
                         color: pmColor,
-                        border: Border.all(color: appColor.bg),
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Text(
                         'PM',
                         style: TextStyle(
                           color: appColor.white,
                           decoration: TextDecoration.none,
-                          fontSize: 25,
+                          fontSize: 15,
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 10),
-                  AppButton(
-                    title: 'Set',
-                    width: 100,
-                    height: 40,
+                  TextButton(
+                    child: Text('Set',
+                        style:
+                            TextStyle(color: newColor.primary, fontSize: 30)),
                     onPressed: () {
                       _handleOkButtonPressed(context);
                     },

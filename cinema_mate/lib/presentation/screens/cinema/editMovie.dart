@@ -1,11 +1,16 @@
+import 'package:cinema_mate/presentation/widgets/genre_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/field.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
+import 'package:cinema_mate/presentation/widgets/time_selector.dart';
 
 var newColor = AppColor();
+
 
 class EditMovie extends StatefulWidget {
   const EditMovie({super.key});
@@ -69,16 +74,6 @@ class _EditMovieState extends State<EditMovie> {
                     textColor: Colors.white,
                   ),
                   Field(
-                    title: 'Genre',
-                    ishash: false,
-                    keyboard: TextInputType.text,
-                    height: 100,
-                    width: 350,
-                    length: 20,
-                    numberOfLines: 1,
-                    textColor: Colors.white,
-                  ),
-                  Field(
                     title: 'Number Of Seats',
                     ishash: false,
                     keyboard: TextInputType.text,
@@ -88,6 +83,8 @@ class _EditMovieState extends State<EditMovie> {
                     numberOfLines: 1,
                     textColor: Colors.white,
                   ),
+                  Container(width: 350, height: 70, child: GenrePicker()),
+                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -118,8 +115,28 @@ class _EditMovieState extends State<EditMovie> {
                           Text('Pick a time',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 20)),
+                          Text('00:00', style: TextStyle(color: newColor.white))
                         ],
-                      )
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        color: Colors.black,
+                        child: IconButton(
+                          icon: Icon(Icons.watch_later,
+                              size: 30, color: Colors.red),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    content:
+                                        ShowTimePicker(onTimeSelected: (c) {}),
+                                  );
+                                });
+                          },
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
