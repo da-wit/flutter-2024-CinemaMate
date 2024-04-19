@@ -1,10 +1,12 @@
+import 'package:cinema_mate/presentation/screens/user/cinema_movies_list.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
 
-var newcolor = AppColor();
+var newColor = AppColor();
 
 class CinemaDescriptionScreen extends StatelessWidget {
   const CinemaDescriptionScreen(
@@ -20,18 +22,22 @@ class CinemaDescriptionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: newcolor.bg,
+        backgroundColor: newColor.bg,
         appBar: AppBar(
-          backgroundColor: newcolor.bg,
+          backgroundColor: newColor.bg,
           title: Text(
             'CinemaMate',
             style: GoogleFonts.josefinSans(
                 textStyle: TextStyle(
-                    color: newcolor.white,
+                    color: newColor.white,
                     fontSize: 30,
                     fontWeight: FontWeight.bold)),
           ),
           centerTitle: true,
+          iconTheme: IconThemeData(
+            color: newColor.white,
+            size: 30,
+          ),
         ),
         body: Column(
           children: [
@@ -51,14 +57,14 @@ class CinemaDescriptionScreen extends StatelessWidget {
                   margin: const EdgeInsets.all(35),
                   height: 40,
                   width: double.infinity,
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(105, 0, 0, 0),
+                  decoration: BoxDecoration(
+                      color: newColor.opblack,
                       borderRadius:
-                          BorderRadius.all(Radius.elliptical(10, 10))),
+                          const BorderRadius.all(Radius.elliptical(10, 10))),
                   child: Center(
                     child: Text(
                       cinemaName,
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+                      style: TextStyle(color: newColor.white, fontSize: 25),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -69,25 +75,25 @@ class CinemaDescriptionScreen extends StatelessWidget {
               height: 250,
               width: double.infinity,
               margin: const EdgeInsets.all(30),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 border: Border(
-                  left: BorderSide(width: 1, color: Colors.white),
-                  right: BorderSide(width: 1, color: Colors.white),
-                  top: BorderSide(width: 1, color: Colors.white),
-                  bottom: BorderSide(width: 1, color: Colors.white),
+                  left: BorderSide(width: 1, color: newColor.white),
+                  right: BorderSide(width: 1, color: newColor.white),
+                  top: BorderSide(width: 1, color: newColor.white),
+                  bottom: BorderSide(width: 1, color: newColor.white),
                 ),
               ),
               child: Column(
                 children: [
-                  const Text(
+                  Text(
                     "Description",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    style: TextStyle(color: newColor.white, fontSize: 30),
                   ),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Text(description,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 20)),
+                          style:
+                              TextStyle(color: newColor.white, fontSize: 20)),
                     ),
                   )
                 ],
@@ -97,7 +103,15 @@ class CinemaDescriptionScreen extends StatelessWidget {
               title: "Checkout Movies",
               width: 300,
               height: 70,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) {
+                      return const CinemaMovieList();
+                    },
+                  ),
+                );
+              },
               rightIcon: const Icon(
                 Icons.arrow_forward,
                 size: 30,

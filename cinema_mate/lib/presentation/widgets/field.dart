@@ -14,7 +14,8 @@ class Field extends StatelessWidget {
       this.width = 350,
       this.length = 20,
       this.numberOfLines = 1,
-      this.textColor = Colors.white});
+      this.textColor = Colors.white,
+      this.value});
 
   final Color? textColor;
   final IconData? icons;
@@ -25,10 +26,12 @@ class Field extends StatelessWidget {
   final double height;
   final double width;
   final int length;
+  final String? value;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: value,
       maxLength: length,
       maxLines: numberOfLines,
       keyboardType: TextInputType.text,

@@ -9,4 +9,5 @@ class AppColor {
   Color genre = const Color.fromARGB(255, 217, 217, 217);
   Color grey = const Color.fromARGB(255, 174, 174, 174);
   Color opblack = const Color.fromARGB(139, 0, 0, 0);
+  Color gradiantColor = const Color.fromARGB(255, 114, 21, 14);
 }

@@ -1,5 +1,6 @@
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:flutter/material.dart';
+
 import 'package:transparent_image/transparent_image.dart';
 
 var newcolor = AppColor();
@@ -31,11 +32,14 @@ class AppCard extends StatelessWidget {
               fit: BoxFit.fitHeight,
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
+          Positioned(
+            left: 4,
+            right: 4,
+            bottom: 8,
             child: Container(
-              height: 50,
-              margin: const EdgeInsets.all(5),
+              // height: 50,
+              // margin: const EdgeInsets.all(5),
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   color: newcolor.opblack,
                   borderRadius:
