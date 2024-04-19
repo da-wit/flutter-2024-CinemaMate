@@ -1,7 +1,8 @@
 import 'package:cinema_mate/presentation/screens/cinema/util.dart';
+import 'package:cinema_mate/presentation/widgets/genre_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:cinema_mate/presentation/widgets/time_selector.dart';
 import '../../widgets/field.dart';
 import '../../widgets/app_color.dart';
 import '../../widgets/tab_bar.dart';
@@ -26,6 +27,19 @@ class Add_Movie extends StatefulWidget {
 
 class _Add_MovieState extends State<Add_Movie> {
   Uint8List? _image;
+  void _presentDatePicker() async {
+    final now = DateTime.now();
+    final lastDate = DateTime(now.year, now.month + 1, now.day);
+
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: now,
+      firstDate: now,
+      lastDate: lastDate,
+    );
+
+    setState(() {});
+  }
 
   void selectImage() async{
     Uint8List img=await pickImage(ImageSource.gallery);
@@ -50,42 +64,92 @@ class _Add_MovieState extends State<Add_Movie> {
                       radius: 65, 
                       backgroundImage: MemoryImage(_image!),
                     ):
-                    CircleAvatar(   
+                    const CircleAvatar(   
                     radius: 65,
                     backgroundImage: NetworkImage('https://th.bing.com/th?id=OIP.oiWZsE1r1LiAJGH5JOHN6AHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2'),
                    
                   
                   ),
-                  Positioned(child: IconButton(onPressed:selectImage,
-                  icon: Icon(Icons.add_a_photo, color: newColor.primary,),
-                  ),
+                 
+                  Positioned(
                   bottom: -4,
                   left: 80,
+                    child: IconButton(onPressed:selectImage,
+                  icon:Icon(Icons.add_a_photo, color: newColor.primary,),
+                  ),
                   )
                   ],)
 
 
                 ),
           
-                Container(
-                  child: Field(title: 'Title',),
-                ),
-                Container(
-                  child: Field(title: 'Genre',),
-                ),
-                Container(
-                  child: Field(title: 'Show Time',),
-                ),
-                Container(
-                  child: Field(title: 'Show Date',),
-                ),
-                Container(
-                  child: Field(title: 'Number of Seats',),
-                ),
-                button
+                 Field(title: 'Title',),
+                
+
+                
+                 Field(title: 'Number of Seats',keyboard: TextInputType.number,),
+                
+               
+                Container(width: 350, height: 70, child: GenrePicker()),
+                  SizedBox(height: 20),         
+  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(children: [
+                        Column(children: [
+                          Text('Pick a date',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20)),
+                          Text('DD/MM/YY',
+                              style: TextStyle(
+                                color: Colors.white,
+                              )),
+                        ]),
+                        Container(
+                          width: 70,
+                          height: 70,
+                          color: Colors.black,
+                          child: IconButton(
+                            icon: Icon(Icons.calendar_month,
+                                size: 30, color: Colors.red),
+                            onPressed: _presentDatePicker,
+                          ),
+                        )
+                      ]),
+                      SizedBox(width: 30),
+                      Column(
+                        children: [
+                          Text('Pick a time',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20)),
+                          Text('00:00', style: TextStyle(color: newColor.white))
+                        ],
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        color: Colors.black,
+                        child: IconButton(
+                          icon: Icon(Icons.watch_later,
+                              size: 30, color: Colors.red),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    content:
+                                        ShowTimePicker(onTimeSelected: (c) {}),
+                                  );
+                                });
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
               ],
             ),
-            
+              
+          
           ),
         ),
     );
