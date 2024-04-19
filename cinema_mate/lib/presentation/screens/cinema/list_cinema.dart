@@ -1,7 +1,7 @@
+import 'package:cinema_mate/presentation/screens/cinema/cinema_details.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/app_color.dart';
-import 'cinema_details.dart';
 import '../../widgets/card.dart'; // Import the Cinema_Detail page
 
 var newColor = AppColor();
@@ -80,7 +80,7 @@ void _dialogBuilder(BuildContext context, String title, String imagePath) {
         content: FractionallySizedBox(
           widthFactor: 1.1,
           child: SingleChildScrollView(
-            child: Cinema_Detail(title: title, imagePath: imagePath),
+            child: CinemaDetail(title: title, imagePath: imagePath),
           ),
         ),
       );
