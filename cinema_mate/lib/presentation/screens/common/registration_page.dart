@@ -61,7 +61,7 @@ class _RegistrationState extends State<Registration> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     AppButton(
-                      title: "User",
+                      title: "As a user",
                       width: 180,
                       onPressed: () {
                         changeForm('User');
@@ -71,7 +71,7 @@ class _RegistrationState extends State<Registration> {
                       buttonColor: userButtonColor,
                     ),
                     AppButton(
-                      title: "Cinema name",
+                      title: "As a cinema",
                       width: 180,
                       onPressed: () {
                         changeForm('Cinema');

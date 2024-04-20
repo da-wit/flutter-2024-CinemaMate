@@ -40,7 +40,7 @@ void main() {
             title: 'Cinema', imagePath: 'assets/images/img.jpg'),
         '/landing': (context) => const Landing(),
         '/register': (context) => const Registration(),
-        '/signIn': (context) => const SignIn(role: 'User'),
+        '/signIn': (context) => const SignIn(role: 'Cinema'),
       },
       home: const Center(
         child: Landing(),
