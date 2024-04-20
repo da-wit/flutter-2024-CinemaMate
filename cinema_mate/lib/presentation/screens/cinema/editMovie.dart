@@ -73,7 +73,7 @@ class _EditMovieState extends State<EditMovie> {
                 const Field(
                   title: 'Number Of Seats',
                   ishash: false,
-                  keyboard: TextInputType.text,
+                  keyboard: TextInputType.number,
                   height: 100,
                   width: 350,
                   length: 20,
@@ -146,7 +146,9 @@ class _EditMovieState extends State<EditMovie> {
                   height: 30,
                 ),
                 AppButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   title: 'Update',
                   width: 200,
                   height: 50,

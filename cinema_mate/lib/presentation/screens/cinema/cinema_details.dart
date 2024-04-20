@@ -1,3 +1,4 @@
+import 'package:cinema_mate/presentation/widgets/genre.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/app_color.dart';
 
@@ -23,7 +24,7 @@ class CinemaDetail extends StatelessWidget {
                 width: 1000,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(30),
-                  child: Image.network(
+                  child: Image.asset(
                     imagePath,
                     width: 300,
                     height: 270,
@@ -38,66 +39,16 @@ class CinemaDetail extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               SizedBox(
-                height: 300,
+                height: 200,
                 width: 300,
                 child: GridView.count(
                   crossAxisCount: 3,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          color: newColor.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      height: 40,
-                      width: 100,
-                      child: const Center(
-                        child: Text(
-                          'Genre',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: newColor.grey,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10))),
-                      height: 40,
-                      width: 100,
-                      child: const Center(
-                        child: Text(
-                          'Genre',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: newColor.grey,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10))),
-                      height: 40,
-                      width: 100,
-                      child: const Center(
-                        child: Text(
-                          'Genre',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: newColor.grey,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10))),
-                      height: 40,
-                      width: 100,
-                      child: const Center(
-                        child: Text(
-                          'Genre',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  children: const [
+                    Genre(genre: 'genre'),
+                    Genre(genre: 'genre'),
+                    Genre(genre: 'genre'),
+                    Genre(genre: 'genre'),
+                    Genre(genre: 'genre'),
                   ],
                 ),
               ),
@@ -119,7 +70,10 @@ class CinemaDetail extends StatelessWidget {
                   const Text('10/100'),
                   const SizedBox(width: 30),
                   IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.edit_square))
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/editMovie');
+                      },
+                      icon: const Icon(Icons.edit_square))
                 ],
               )
             ],

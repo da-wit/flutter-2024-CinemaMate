@@ -4,7 +4,6 @@ import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/buttons.dart';
 import 'package:cinema_mate/presentation/widgets/field.dart';
 
-
 var newColor = AppColor();
 
 class CinemaProfile extends StatelessWidget {
@@ -64,19 +63,6 @@ class CinemaProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: newColor.bg,
-      appBar: AppBar(
-        backgroundColor: newColor.bg,
-        title: Text(
-          'CinemaMate',
-          style: GoogleFonts.josefinSans(
-            textStyle: TextStyle(
-                color: newColor.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold),
-          ),
-        ),
-        centerTitle: true,
-      ),
       body: Center(
         child: Column(
           children: [
@@ -86,7 +72,7 @@ class CinemaProfile extends StatelessWidget {
               'Email',
               style: TextStyle(color: newColor.white),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             AppButton(
@@ -96,9 +82,9 @@ class CinemaProfile extends StatelessWidget {
               title: 'Change Email',
               width: 300,
               height: 50,
-              leftIcon: Icon(Icons.email),
+              leftIcon: const Icon(Icons.email),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             AppButton(
@@ -108,9 +94,9 @@ class CinemaProfile extends StatelessWidget {
               title: 'Change password',
               width: 300,
               height: 50,
-              leftIcon: Icon(Icons.password),
+              leftIcon: const Icon(Icons.password),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             AppButton(
@@ -120,19 +106,21 @@ class CinemaProfile extends StatelessWidget {
               title: 'Change Description',
               width: 300,
               height: 50,
-              leftIcon: Icon(Icons.description),
+              leftIcon: const Icon(Icons.description),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50.0,
             ),
             AppButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/signIn');
+              },
               title: 'Logout',
               width: 200,
               height: 50,
-              leftIcon: Icon(Icons.logout),
+              leftIcon: const Icon(Icons.logout),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             AppButton(
@@ -140,7 +128,7 @@ class CinemaProfile extends StatelessWidget {
               title: 'delete',
               width: 200,
               height: 50,
-              leftIcon: Icon(Icons.delete),
+              leftIcon: const Icon(Icons.delete),
             ),
           ],
         ),

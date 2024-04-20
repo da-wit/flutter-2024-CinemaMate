@@ -34,7 +34,7 @@ class Field extends StatelessWidget {
       initialValue: value,
       maxLength: length,
       maxLines: numberOfLines,
-      keyboardType: TextInputType.text,
+      keyboardType: keyboard,
       obscuringCharacter: "*",
       obscureText: ishash,
       style: TextStyle(color: textColor),

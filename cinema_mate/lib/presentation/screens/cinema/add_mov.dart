@@ -51,18 +51,6 @@ class _AddMovieState extends State<AddMovie> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'CinemaMate',
-          style: GoogleFonts.josefinSans(
-            color: newColor.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 30,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: newColor.bg,
-      ),
       backgroundColor: newColor.bg,
       body: SingleChildScrollView(
         child: Center(

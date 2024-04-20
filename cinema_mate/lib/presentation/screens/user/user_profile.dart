@@ -112,7 +112,9 @@ class UserProfile extends StatelessWidget {
           AppButton(
             title: 'Log Out',
             width: 200,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/signIn');
+            },
             leftIcon: const Icon(Icons.logout),
           ),
           const SizedBox(height: 30),

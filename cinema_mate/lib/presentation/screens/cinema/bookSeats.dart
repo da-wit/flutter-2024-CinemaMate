@@ -42,18 +42,6 @@ class _BookSeatsState extends State<BookSeats> {
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
       backgroundColor: newColor.bg,
-      appBar: AppBar(
-        backgroundColor: newColor.bg,
-        title: Text(
-          'CinemaMate',
-          style: GoogleFonts.josefinSans(
-              textStyle: TextStyle(
-                  color: newColor.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold)),
-        ),
-        centerTitle: true,
-      ),
       body: Center(
         child: Column(
           children: [

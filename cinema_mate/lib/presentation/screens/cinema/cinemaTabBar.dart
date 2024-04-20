@@ -6,6 +6,7 @@ import 'package:cinema_mate/presentation/screens/cinema/list_cinema.dart';
 import 'package:flutter/material.dart';
 import 'package:cinema_mate/presentation/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/widgets/tab_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final newColor = AppColor();
 
@@ -18,7 +19,7 @@ class CinemaTabBar extends StatefulWidget {
 
 class _CinemaTabBarState extends State<CinemaTabBar> {
   int _selectedPageIndex = 0;
-  Widget _selectedScreen = const CinemaProfile();
+  Widget _selectedScreen = const CinemaList();
 
   void _selectPage(index) {
     setState(() {
@@ -45,18 +46,18 @@ class _CinemaTabBarState extends State<CinemaTabBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      // appBar: AppBar(
-      //   title: Text(
-      //     'CinemaMate',
-      //     style: GoogleFonts.josefinSans(
-      //       color: newColor.white,
-      //       fontWeight: FontWeight.bold,
-      //       fontSize: 30,
-      //     ),
-      //   ),
-      //   centerTitle: true,
-      //   backgroundColor: newColor.bg,
-      // ),
+      appBar: AppBar(
+        title: Text(
+          'CinemaMate',
+          style: GoogleFonts.josefinSans(
+            color: newColor.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: newColor.bg,
+      ),
       backgroundColor: newColor.bg,
       body: _selectedScreen,
       bottomNavigationBar: CinemaBottomNavBar(
